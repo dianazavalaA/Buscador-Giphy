@@ -1,4 +1,6 @@
 <script lang="ts">
+import Image from './components/Image.vue';
+
   export default {
     data() {
       return {
@@ -17,6 +19,6 @@
 
   <template>
     <div class="flex flex-wrap gap-2 justify-evenly ">
-      <img class="max-h-40 rounded-lg" v-for="(imageUrl, index) in imageUrls" :key="index" :src="imageUrl" alt="Imagen" />
+      <Image :url="image"  v-for="image in imageUrls" :key="image"/>
     </div>
 </template>
