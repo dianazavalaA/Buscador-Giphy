@@ -74,6 +74,16 @@ Los pasos a seguir se enlistan a continuación:
     por el servicio nos puede salir más caro.
 12. Vamos a crear un archivo llamado **CallApi.ts**, este archivo es muy importante ya que con el haremos el llamado correspondiente a nuestra API y hacemos uso de un _await fetch_ donde mandamos la URL de nuestra API, que recordemos se obtiene esta liga completa en el punto número 8 donde se explica como obtenerla.
 
+## Implementación archivo .env (Explicación)
+
+Se va a crear un archivo .env para guardar la _API_KEY_ de forma local, como se mencionó en la misma documentación, en el archivo **CallApi.ts** se va a crear una nueva variable de tipo _Const_, dentro de este archivo se le puso _const API_KEY = import.meta.env.API_KEY_, lo que quiere decir lo anterior es la forma en la que podemos acceder a las variables de entorno en cuanto a la ejecución de JS, si lo vamos dividiendo para entenderlo mejor _import.meta.env_ -> se refiere a la parte del entorno environment y _API_KEY_ -> es el nombre de la variable a la que vamos a acceder, esta última ya se configuro en el archivo _.env_, en este mismo archivo **CallApi.ts** se ha configurado y escrito en código TypeScript para poder hacer el llamado a la API, en esta exportamos una función llamada _getGifs_ que toma un parametro query de tipo string y nos devuelve una promise asincrona, aquí se metió un catch para el manejo de errores que nos pudiera salir en la ejecución, de igual manera se hace uso de fetch para poder hacer la solicitud al llamado de la API de GIPHY donde incluimos la URL y dentro de esta inclumos _API_KEY_ y el _query_ se nos devuelve un resultado de la solicitud en un formato de tipo _JSON_.
+Si se dan cuenta en el archivo _.env_ se hizo uso de un _VITE_ -> _VITE_API_KEY_ el uso de esta palabra es porque hacemos uso de la biblioteca _VITE_
+Ojo a continuación, se dará un ejemplo de la variable de entorno este valor es inventado, sólo es para mostrar como sería:
+
+`VITE_API_KEY=aHahdud809439489484`
+
+NOTA: Es importante no compartir este dato, ya que es una mala práctica y además las pueden robar y si estas pagando te puede salir caro por el uso que le den, por lo que debemos tomar en cuenta esta parte, por ello se puso como un ejemplo y no se compartio el API KEY real todas las imagenes que se muestran en el apartado de ¿Cómo es la API? y ¿Cómo se usa? son usadas para que se puedan dar una idea es importante comentar que esa no es la API que se utilizó para el proyecto, ya que toda lo que hay en la documentación es meramente informativo.
+
 ## Solución
 
 Se tomó la **API de GIPHY** como ya se ha mencionado antes, al inicio me costo un poco de trabajo poderme imaginar la interfaz entonces lo que hice fue que en pain realicé un diseño rápido para darme la idea de como pasar los componentes visuales a código.
